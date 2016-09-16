@@ -1,0 +1,7 @@
+<div class="items">
+  <div *ngFor="let item of items">
+    <p><strong>Short Name:</strong> {{item.short_name}}</p>
+    <p><strong>Description:</strong> {{item.descrip}}</p>
+    <p><strong>Price:</strong> {{item.prices[0].sell | currency:'USD':true}}</p>
+  </div>
+</div>
