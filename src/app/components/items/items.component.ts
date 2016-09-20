@@ -11,7 +11,7 @@ export class ItemsComponent implements OnInit {
   items:any;
 
   constructor(private _itemsService:ItemsService) {
-    this._itemsService.getItems().subscribe(items => {
+    this._itemsService.getItems('7D4B19AF-ADE8-8542-9CEE-FBD487B74F80').subscribe(items => {
       this.items = items.result;
     });
   }

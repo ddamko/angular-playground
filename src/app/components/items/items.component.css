@@ -1,3 +1,2 @@
-ul { list-style: none; margin: 0; padding: 0; }
-li { margin: 0 0 1em 0; background-color: #f9f0e3; padding: 0.5em; }
-p { margin: 0; padding: 0; font-family: sans; font-size: 0.75em; }
+div.item { margin: 0 0 1.25em 2em; background-color: #f9f0e3; padding: 0.5em; width: 425px; }
+p { font-family: sans; margin: 0; }

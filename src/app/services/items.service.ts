@@ -7,8 +7,8 @@ export class ItemsService {
 
   constructor(private _http:Http) { }
 
-  getItems() {
-    return this._http.get('http://10.0.1.193:8000/api/customer/item?key=00402')
+  getItems(id: string) {
+    return this._http.get('http://localhost:8000/api/customer/item?id={id}')
                .map(res => res.json());
   }
 
