@@ -11,15 +11,13 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
-  login: any;
 
   constructor(private _formbuilder: FormBuilder, private _loginService:LoginService) { }
 
   onSubmit() {
-    this._loginService.checkUser(this.loginForm.value).subscribe(login => {
-      this.login = login.result;
+    this._loginService.checkUser(this.loginForm.value).subscribe(data => {
+      console.log(data.result);
     });
-    console.log(this.login);
   }
 
   ngOnInit(): void {

@@ -22,7 +22,9 @@ import { LoginComponent } from './components/login/login.component';
     HttpModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'apiBase', useValue: 'http://localhost:8000/api/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

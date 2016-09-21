@@ -7,9 +7,9 @@ export class LoginService {
 
   constructor(private _http:Http) { }
 
-  checkUser(formData: Object) {
-    this._http.get("http://localhost:8000/api/user/{formData.username}/login?pass={formData.password}")
-        .map( res => res.json() );
+  checkUser(formData: any) {
+    return this._http.get( "http://localhost:8000/api/user/" + formData.username + "/login?pass=" + formData.password )
+               .map( res => res.json() );
   }
 
 }
