@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,20 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
 
-  constructor(private _formbuilder: FormBuilder, private _loginService:LoginService) { }
+  constructor(private _formbuilder: FormBuilder, private _loginService:LoginService, private _router: Router) { }
 
   onSubmit() {
     this._loginService.checkUser(this.loginForm.value).subscribe(data => {
-      console.log(data.result);
+
+      if (!data) {
+        alert('Wrong Credentials');
+
+      } else {
+        localStorage.setItem('token', data.result.token);
+        localStorage.setItem('customer_id', data.result.custs_cid);
+        this._router.navigate(['/dashboard']);
+      }
+
     });
   }
 
